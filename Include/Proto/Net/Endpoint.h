@@ -1,8 +1,8 @@
 #pragma once
 #include "Proto/Platform.h"
 
-#ifdef WINDOWS_PLATFORM
+#ifdef _WIN32
 	#include "Proto/Net/Windows/Endpoint.h"
-#elifdef LINUX_PLATFORM
+#elifdef __unix__
 	#include "Proto/Net/Linux/Endpoint.h"
 #endif

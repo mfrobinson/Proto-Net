@@ -1,8 +1,8 @@
 #pragma once
 #include "Proto/Platform.h"
 
-#ifdef WINDOWS_PLATFORM
+#ifdef __WIN32
 	#include "Proto/Net/Windows/Socket.h"
-#elifdef LINUX_PLATFORM
+#elifdef __unix__
 	#include "Proto/Net/Linux/Socket.h"
 #endif

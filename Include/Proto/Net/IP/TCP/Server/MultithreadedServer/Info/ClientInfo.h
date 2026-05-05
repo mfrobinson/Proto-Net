@@ -6,6 +6,6 @@
 namespace proto::net::ip::tcp {
 
 	template <typename TExtraClientInfo>
-	using ClientInfo = ExtendStruct<BaseClientInfo, TExtraClientInfo>;
+	using ClientInfo = ExtendStruct<BaseClientInfo<TExtraClientInfo>, TExtraClientInfo>;
 
 }

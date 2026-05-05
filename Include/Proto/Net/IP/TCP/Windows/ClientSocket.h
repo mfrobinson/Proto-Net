@@ -1,5 +1,6 @@
 #pragma once
 #include "Proto/Net/IP/TCP/Windows/DataSocket.h"
+#include <string>
 //#include "Proto/Net/IP/Concepts/ClientSocketConcept.h"
 
 

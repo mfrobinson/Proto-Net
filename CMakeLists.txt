@@ -38,7 +38,9 @@ set(
 	IP/TCP/Server/MultithreadedServer/Signatures/BaseSendCallbackSignature.h
 	IP/TCP/Server/MultithreadedServer/Signatures/RecvCallbackSignature.h
 	IP/TCP/Server/MultithreadedServer/Signatures/SendCallbackSignature.h
+	IP/TCP/ClientSocket.h
 	IP/TCP/DataSocket.h
+	IP/TCP/ServerSocket.h
 	IP/TCP/Server.h
 	IP/Endpoint.h
 	IP/Socket.h
@@ -71,6 +73,10 @@ set(
 
 # Set the source files
 set(
+	SOURCES
+	IP/TCP/Server.cpp
+)
+set(
 	WINDOWS_SOURCES
 	IP/TCP/Windows/ClientSocket.cpp
 	IP/TCP/Windows/DataSocket.cpp
@@ -78,12 +84,6 @@ set(
 	Windows/Endpoint.cpp
 	Windows/Socket.cpp
 	Windows/WinsockInstance.cpp
-)
-list(TRANSFORM WINDOWS_SOURCES PREPEND "Src/Net/")
-
-set(
-	SOURCES
-	IP/TCP/Server.cpp
 )
 
 # Append the appropriate platform includes and declarations to the generic includes and declarations
@@ -104,6 +104,7 @@ endif()
 # Transform the includes and declarations to have the appropriate path
 list(TRANSFORM INCLUDES PREPEND "Proto/Net/")
 list(TRANSFORM DECLARATIONS PREPEND "Declarations/Proto/Net/")
+list(TRANSFORM SOURCES PREPEND "Src/Net/")
 
 # Merge the includes and declarations together since they are both to be includes
 list(APPEND INCLUDES ${DECLARATIONS})

@@ -1,8 +1,7 @@
 #pragma once
-#include "Proto/Platform.h"
 
-#ifdef WINDOWS_PLATFORM
+#ifdef _WIN32
 	#include "Proto/Net/IP/TCP/Windows/DataSocket.h"
-#elifdef LINUX_PLATFORM
+#elifdef __unix__
 	#include "Proto/Net/IP/TCP/Linux/DataSocket.h"
 #endif

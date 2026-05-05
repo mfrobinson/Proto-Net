@@ -1,5 +1,4 @@
 #pragma once
-#include "Proto/Platform.h"
 
 #ifdef _WIN32
 	#include "Proto/Net/Windows/Endpoint.h"

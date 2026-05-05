@@ -1,6 +1,6 @@
 #pragma once
-#include "Proto/Net/Windows/WindowsSocket.h"
-#include "Proto/Net/IP/TCP/Windows/WindowsDataSocket.h"
+#include "Proto/Net/Windows/Socket.h"
+#include "Proto/Net/IP/TCP/Windows/DataSocket.h"
 //#include "Proto/Net/IP/Concepts/ServerSocketConcept.h"
 #include <string>
 

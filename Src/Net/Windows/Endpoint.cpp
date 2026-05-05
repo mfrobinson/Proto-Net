@@ -1,4 +1,5 @@
 #include "Proto/Net/Windows/Endpoint.h"
+#include <utility>
 
 
 namespace proto::net {
@@ -40,11 +41,11 @@ namespace proto::net {
 	}
 
 	Endpoint::operator sockaddr* () {
-		return &this->address_store;
+		return (sockaddr*)(&this->address_store);
 	}
 
 	Endpoint::operator const sockaddr* () const {
-		return &this->address_store;
+		return (sockaddr*)(&this->address_store);
 	}
 
 	INT Endpoint::size() const {

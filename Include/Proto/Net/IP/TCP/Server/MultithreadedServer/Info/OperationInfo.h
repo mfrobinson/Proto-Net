@@ -1,8 +1,7 @@
 #pragma once
-#include "Proto/Platform.h"
 
-#ifdef WINDOWS_PLATFORM
+#ifdef _WIN32
 	#include "Proto/Net/IP/TCP/Server/MultithreadedServer/Windows/OperationInfo.h"
-#elifdef LINUX_PLATFORM
-	#include "Proto/Net/IP/TCP/Server/MultithreadedServer/Linux/OperationInfo.h"
+#elifdef __unix__
+	#include "Proto/Net/IP/TCP/Server/MultithreadedServer/Unix/OperationInfo.h"
 #endif

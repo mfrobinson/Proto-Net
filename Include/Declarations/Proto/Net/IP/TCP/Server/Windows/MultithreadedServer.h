@@ -16,8 +16,8 @@ namespace proto::net::ip::tcp {
 		MultithreadedServer();
 		MultithreadedServer(MultithreadedServer<TExtraClientInfo, TExtraRecvInfo, TExtraSendInfo>&& other) = delete;
 		MultithreadedServer(const MultithreadedServer<TExtraClientInfo, TExtraRecvInfo, TExtraSendInfo>& other) = delete;
-		MultithreadedServer<TExtraClientInfo, TExtraRecvInfo, TExtraSendInfo>& operator(MultithreadedServer<TExtraClientInfo, TExtraRecvInfo, TExtraSendInfo>&& other) = delete;
-		MultithreadedServer<TExtraClientInfo, TExtraRecvInfo, TExtraSendInfo>& operator(const MultithreadedServer<TExtraClientInfo, TExtraRecvInfo, TExtraSendInfo>& other) = delete;
+		MultithreadedServer<TExtraClientInfo, TExtraRecvInfo, TExtraSendInfo>& operator=(MultithreadedServer<TExtraClientInfo, TExtraRecvInfo, TExtraSendInfo>&& other) = delete;
+		MultithreadedServer<TExtraClientInfo, TExtraRecvInfo, TExtraSendInfo>& operator=(const MultithreadedServer<TExtraClientInfo, TExtraRecvInfo, TExtraSendInfo>& other) = delete;
 		~MultithreadedServer();
 	protected:
 		virtual void execute() override;

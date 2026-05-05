@@ -8,6 +8,7 @@
 namespace proto::net::ip::tcp {
 
 	template <typename TExtraClientInfo>
-	using ClientInfo = ExtendStruct<BaseClientInfo<TExtraClientInfo, typename std::list<std::weak_ptr<ClientInfo<TExtraClientInfo>>>::iterator>, TExtraClientInfo>;
+	struct ClientInfo : public ExtendStruct<BaseClientInfo<TExtraClientInfo, typename std::list<std::weak_ptr<ClientInfo<TExtraClientInfo>>>::iterator>, TExtraClientInfo> {
+	};
 
 }

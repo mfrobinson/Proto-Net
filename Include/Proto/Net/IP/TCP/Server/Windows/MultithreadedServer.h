@@ -65,14 +65,14 @@ namespace proto::net::ip::tcp {
 			switch (operation_info->type) {
 				case IoType::RECV: {
 					RecvInfo<TExtraClientInfo, TExtraRecvInfo>* recv_info = (RecvInfo<TExtraClientInfo, TExtraRecvInfo>*)(operation_info);
-					IocpDataSocket iocp_data_socket(recv_info->client_info_ptr);
+					IocpDataSocket<TExtraClientInfo, TExtraRecvInfo, TExtraSendInfo> iocp_data_socket(recv_info->client_info_ptr);
 					invoke_recv_callback(iocp_data_socket, client_info_ptr, recv_info);
 					delete recv_info;
 					break;
 				}
 				case IoType::SEND: {
 					SendInfo<TExtraClientInfo, TExtraSendInfo>* send_info = (SendInfo<TExtraClientInfo, TExtraSendInfo>*)(operation_info);
-					IocpDataSocket iocp_data_socket(send_info->client_info_ptr);
+					IocpDataSocket<TExtraClientInfo, TExtraRecvInfo, TExtraSendInfo> iocp_data_socket(send_info->client_info_ptr);
 					invoke_send_callback(iocp_data_socket, client_info_ptr, recv_info);
 					delete send_info;
 					break;
